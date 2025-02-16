@@ -1,16 +1,32 @@
 #include <iostream>
 #include "banque.h"
+#include "bnq.h"
 
 int main() {
     
-    Compte compte1(12345, "azer kh", 1000.0);
+    banque b;
+
+    int nombreComptes;
+    std::cout << "Combien de comptes voulez-vous ajouter ? ";
+    std::cin >> nombreComptes;
+
+    for (int i = 0; i < nombreComptes; ++i) {
+        Compte comp;
+        std::cout << "Saisie des informations pour le compte " << i + 1 << " :" << std::endl;
+        comp.saisir();
+        comp.afficher();
+
+        int index;
+        b.ajoutCompte(comp, &index);
+        std::cout << "Compte ajouté à l'index: " << index << std::endl;
+    }
 
     
-    std::cout << "Numéro de compte: " << compte1.getNumCompte() << std::endl;
-    std::cout << "Nom du propriétaire: " << compte1.getNomProprietaire() << std::endl;
-    std::cout << "Solde: " << compte1.getSolde() << std::endl;
-
-
+    std::cout << "Tous les comptes dans la banque :" << std::endl;
+    std::vector<Compte> comptes = b.getComptes();
+    for (const auto& compte : comptes) {
+        compte.afficher();
+    }
 
     return 0;
 }

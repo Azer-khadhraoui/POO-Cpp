@@ -11,6 +11,7 @@ private:
 
 public:
     // Constructeur
+    Compte();
     Compte(int num, const std::string& nom, double sol);
 
     // Getters
@@ -24,7 +25,8 @@ public:
     void setSolde(double sol);
 
     
-   
+    void saisir();
+    void afficher() const;
 };
 
 #endif // BANQUE_H

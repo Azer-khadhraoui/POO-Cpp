@@ -1,19 +1,38 @@
 #include "Ecole.h"
-#include "etudiant.h"
+#include "Etudiant.h"
 #include <iostream>
+#include <string>
 
 int main() {
     Ecole ecole;
+    int nombreEtudiants;
 
-    Etudiant etudiant1("Azer", "123 Rue A", "Classe 1", "01/01/2000", 1);
-    Etudiant etudiant2("aaaa", "456 Rue B", "Classe 2", "02/02/2001", 2);
-    Etudiant etudiant3("Chaaaaaaae", "789 Rue C", "Classe 1", "03/03/2002", 3);
+    std::cout << "Combien d'étudiants voulez-vous ajouter ? ";
+    std::cin >> nombreEtudiants;
+    std::cin.ignore(); // Pour ignorer le caractère de nouvelle ligne restant
 
-    ecole.ajouterEtudiant(etudiant1);
-    ecole.ajouterEtudiant(etudiant2);
-    ecole.ajouterEtudiant(etudiant3);
+    for (int i = 0; i < nombreEtudiants; ++i) {
+        std::string nom, adresse, classe, dateNaissance;
+        int numeroIdentite;
 
-    std::cout << "Tous les étudiants:" << std::endl;
+        std::cout << "Entrez les informations pour l'étudiant " << i + 1 << ":\n";
+        std::cout << "Nom: ";
+        std::getline(std::cin, nom);
+        std::cout << "Adresse: ";
+        std::getline(std::cin, adresse);
+        std::cout << "Classe: ";
+        std::getline(std::cin, classe);
+        std::cout << "Date de Naissance (jj/mm/aaaa): ";
+        std::getline(std::cin, dateNaissance);
+        std::cout << "Numéro d'Identité: ";
+        std::cin >> numeroIdentite;
+        std::cin.ignore(); // Pour ignorer le caractère de nouvelle ligne restant
+
+        Etudiant etudiant(nom, adresse, classe, dateNaissance, numeroIdentite);
+        ecole.ajouterEtudiant(etudiant);
+    }
+
+    std::cout << "\nTous les étudiants:" << std::endl;
     ecole.afficherEtudiants();
 
     std::cout << "\nRecherche de l'étudiant avec le numéro d'identité 2:" << std::endl;

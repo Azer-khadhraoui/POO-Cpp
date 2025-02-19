@@ -16,4 +16,4 @@ public:
     void afficherEtudiantsParClasse(const std::string& classe) const;
 };
 
-#endif // ECOLE_H
+#endif // ECOLE_H21

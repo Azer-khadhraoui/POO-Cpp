@@ -24,15 +24,9 @@ int main() {
         std::cin >> continuer;
     } while (continuer == 'o' || continuer == 'O');
 
-    // Ajout des évènements à un évènement principal
-    Evenement evenementPrincipal;
-    for (Evenement& e : evenements) {
-        evenementPrincipal.ajouter(e);
-    }
-
     // Affichage des évènements
     std::cout << "Evènements ajoutés :" << std::endl;
-    for (Evenement& e : evenementPrincipal.getEvenements()) {
+    for (Evenement& e : evenements) {
         e.afficher();
         std::cout << std::endl;
     }

@@ -1,0 +1,41 @@
+#include "evenement.h"
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<Evenement> evenements;
+    std::string date, lieu, type, nom;
+    char continuer;
+
+    do {
+        std::cout << "Entrez la date de l'évènement (YYYY-MM-DD) : ";
+        std::cin >> date;
+        std::cout << "Entrez le lieu de l'évènement : ";
+        std::cin >> lieu;
+        std::cout << "Entrez le type de l'évènement : ";
+        std::cin >> type;
+        std::cout << "Entrez le nom de l'évènement : ";
+        std::cin >> nom;
+
+        Evenement e(date, lieu, type, nom);
+        evenements.push_back(e);
+
+        std::cout << "Voulez-vous ajouter un autre évènement ? (o/n) : ";
+        std::cin >> continuer;
+    } while (continuer == 'o' || continuer == 'O');
+
+    // Ajout des évènements à un évènement principal
+    Evenement evenementPrincipal;
+    for (Evenement& e : evenements) {
+        evenementPrincipal.ajouter(e);
+    }
+
+    // Affichage des évènements
+    std::cout << "Evènements ajoutés :" << std::endl;
+    for (Evenement& e : evenementPrincipal.getEvenements()) {
+        e.afficher();
+        std::cout << std::endl;
+    }
+
+    return 0;
+}

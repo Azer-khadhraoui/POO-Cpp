@@ -32,6 +32,8 @@ public:
 
     void ajouter(Evenement& e1);
     void afficher() const;
+    Evenement* rechercher(std::string nom, std::vector<Evenement>& tableauEvenements);
+    void supprimer(std::string nom, std::vector<Evenement>& tableauEvenements);
 };
 
 #endif // EVENEMENT_H

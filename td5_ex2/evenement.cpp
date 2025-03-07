@@ -59,3 +59,23 @@ void Evenement::afficher() const {
     std::cout << "Type: " << type << std::endl;
     std::cout << "Nom: " << nom << std::endl;
 }
+
+
+
+Evenement* Evenement::rechercher(std::string nom, std::vector<Evenement>& tableauEvenements) {
+    for (Evenement& e : tableauEvenements) {
+        if (e.getNom() == nom) {
+            return &e;
+        }
+    }
+    return nullptr;
+}
+
+void Evenement::supprimer(std::string nom, std::vector<Evenement>& tableauEvenements) {
+    for (auto it = tableauEvenements.begin(); it != tableauEvenements.end(); ++it) {
+        if (it->getNom() == nom) {
+            tableauEvenements.erase(it);
+            break;
+        }
+    }
+}

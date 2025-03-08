@@ -79,3 +79,32 @@ void Evenement::supprimer(std::string nom, std::vector<Evenement>& tableauEvenem
         }
     }
 }
+void Evenement::afficherEvenements(std::vector<Evenement>& tableauEvenements, std::string annee) const {
+    for (Evenement& e : tableauEvenements) {
+        if (e.getDate()==annee) {
+            e.afficher();
+        }
+    }
+}
+void Evenement::modifier(std::string nom, std::vector<Evenement>& tableauEvenements) {
+    for (Evenement& e : tableauEvenements) {
+        if (e.getNom() == nom) {
+            std::string date, lieu, type, nom;
+            std::cout << "Entrez la date de l'évènement (YYYY-MM-DD) : ";
+            std::cin >> date;
+            std::cout << "Entrez le lieu de l'évènement : ";
+            std::cin >> lieu;
+            std::cout << "Entrez le type de l'évènement : ";
+            std::cin >> type;
+            std::cout << "Entrez le nom de l'évènement : ";
+            std::cin >> nom;
+
+            e.setDate(date);
+            e.setLieu(lieu);
+            e.setType(type);
+            e.setNom(nom);
+        }
+    }
+}
+
+

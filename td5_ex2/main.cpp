@@ -4,7 +4,7 @@
 
 int main() {
     std::vector<Evenement> evenements;
-    std::string date, lieu, type, nom, nomch,nomsupp;
+    std::string date, lieu, type, nom, nomch,nomsupp,an,nommodif;
     char continuer;
 
     do {
@@ -45,9 +45,22 @@ int main() {
     } else {
         std::cout << "Evènement non trouvé." << std::endl;
     }
-    std::cout << "Entrez le nom de l'évènement a supprimer : ";
+    /*std::cout << "Entrez le nom de l'évènement a supprimer : ";
     std::cin >> nomsupp;
-    tempsupp.supprimer(nomsupp, evenements);
+    tempsupp.supprimer(nomsupp, evenements);*/
+
+    std::cout << "Entrez l annee : ";
+    std::cin >> an;
+    temp.afficherEvenements(evenements,an);
+
+    std::cout << "Entrez le nom de l'évènement a modifier : ";
+    std::cin >> nommodif;
+    temp.modifier(nommodif, evenements);
+    for (Evenement& e : evenements) {
+        e.afficher();
+        std::cout << std::endl;
+    }
+
 
 
     return 0;

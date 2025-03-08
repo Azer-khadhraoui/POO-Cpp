@@ -34,6 +34,8 @@ public:
     void afficher() const;
     Evenement* rechercher(std::string nom, std::vector<Evenement>& tableauEvenements);
     void supprimer(std::string nom, std::vector<Evenement>& tableauEvenements);
+    void afficherEvenements(std::vector<Evenement>& tableauEvenements,std::string annee) const;
+    void modifier(std::string nom, std::vector<Evenement>& tableauEvenements);
 };
 
 #endif // EVENEMENT_H

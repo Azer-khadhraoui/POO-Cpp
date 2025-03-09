@@ -14,9 +14,9 @@ class application
     public :
         application();
         application(std::vector<logementindiv> logementindivs);
-        void ajouterlogementin();
+        bool ajouterlogementin(logementindiv& logementindiv1);
         void afficherlogementin();
-        int prixtotal();
+        int prixtotal(std::string id);
 };
 
 #endif

@@ -14,8 +14,7 @@ class logement
     public : 
         logement();
         logement(std::string id, std::string proprietaire, std::string adresse, int surface, int prix);
-        void afficher();
-        void saisir();
+       
         void setId(std::string id);
         void setProprietaire(std::string proprietaire);
         void setAdresse(std::string adresse);

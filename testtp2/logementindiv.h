@@ -14,7 +14,7 @@ class logementindiv : public logement
         logementindiv(std::string id, std::string proprietaire, std::string adresse, int surface, int prix, int nbpieces, bool piscine);
         void getnbpieces();
         void setnbpieces(int nbpieces);
-        void getpiscine();
+        int getpiscine();
         void setpiscine(bool piscine);
 };
 

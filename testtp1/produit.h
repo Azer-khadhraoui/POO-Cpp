@@ -7,7 +7,6 @@ class produit
 {
         std::string nom;
         int id;
-        std::string nom;
         std::string libelle;
         float prix;
         int quantite;
@@ -15,7 +14,7 @@ class produit
     public:
         produit();
         produit(int id, std::string nom, std::string libelle, float prix, int quantite);
-        ~produit();
+        
         void setId(int id);
         int getId();
         void setNom(std::string nom);

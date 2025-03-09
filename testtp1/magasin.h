@@ -1,4 +1,5 @@
-
+#ifndef MAGASIN_H
+#define MAGASIN_H
 #include <iostream>
 #include <vector>
 #include <string>
@@ -16,8 +17,14 @@ class magasin
     public:
         magasin();
         magasin(std::string nom);
-        ~magasin();
+        
         void setNom(std::string nom);
         std::string getNom();
+        bool ajouterProduit(proepicerie& proepicerie);
+        void afficherProduits();
+        void supprimerProduit();
+        float prixTotal();
         
     };
+
+#endif

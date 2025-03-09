@@ -8,7 +8,6 @@ class proepicerie: public produit{
     public:
         proepicerie();
         proepicerie(int id, std::string nom, std::string libelle, float prix, int quantite, double poids);
-        ~proepicerie();
         void setPoids(double poids);
         double getPoids();
         
